@@ -1,4 +1,4 @@
-<!-- ---
+---
 layout: home
 ---
 
@@ -74,6 +74,4 @@ Copyright 2019 Tao He.
 [3]: https://github.com/sighingnow/jekyll-gitbook/fork
 [4]: https://github.com/allejo/jekyll-toc
 [5]: https://github.com/gitbook-plugins/gitbook-plugin-search-pro
-[6]: https://github.com/rouge-ruby/rouge/tree/master/lib/rouge/themes -->
-
-aaa
+[6]: https://github.com/rouge-ruby/rouge/tree/master/lib/rouge/themes
