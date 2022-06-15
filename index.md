@@ -1,7 +1,6 @@
 ---
 layout: home
 ---
-# 詹某
 
 Make Jelly site have a GitBook look!
 
