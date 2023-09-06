@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>U 盘安装 Ubuntu</title>
+    <link href="/2023/09/06/ubuntu-u/"/>
+    <url>/2023/09/06/ubuntu-u/</url>
+    
+    <content type="html"><![CDATA[<p>说是安装 Ubuntu 系统，实际上只要是要生成系统盘都可以按照如下流程去操作。</p><h1 id="制作-U-盘引导盘，安装-Ubuntu-系统"><a href="#制作-U-盘引导盘，安装-Ubuntu-系统" class="headerlink" title="制作 U 盘引导盘，安装 Ubuntu 系统"></a>制作 U 盘引导盘，安装 Ubuntu 系统</h1><h2 id="下载所需系统对应-iso-文件"><a href="#下载所需系统对应-iso-文件" class="headerlink" title="下载所需系统对应 iso 文件"></a>下载所需系统对应 iso 文件</h2><p>Windows 系统可以去 <a href="https://msdn.itellyou.cn/">MSDN</a> 下载，其他系统都可以在对应官网或<a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学镜像站</a>下载。</p><h2 id="制作-U-盘启动系统"><a href="#制作-U-盘启动系统" class="headerlink" title="制作 U 盘启动系统"></a>制作 U 盘启动系统</h2><p>下载软件 <a href="https://rufus.ie/zh/">Rufus</a> 按照下图设置后，软件会把对应 iso 文件写入U盘，制作系统启动盘。</p><blockquote><p>最好是空U盘，否则会被格式化。</p></blockquote><img src="/2023/09/06/ubuntu-u/ubuntu_1-1.png" class="" title="rufus"><p>用推荐方式就行，直接ok</p><img src="/2023/09/06/ubuntu-u/ubuntu_1-2.png" class="" title="rufus"><p>直接选是</p><img src="/2023/09/06/ubuntu-u/ubuntu_1-3.png" class="" title="rufus"><p>点击确定，开始烧录</p><img src="/2023/09/06/ubuntu-u/ubuntu_1-4.png" class="" title="rufus"><p>到此U盘引导盘制作完成，各位可以直接根据自己电脑系统进入 BIOS 界面重新安装系统。</p><h2 id="Rufus-优势"><a href="#Rufus-优势" class="headerlink" title="Rufus 优势"></a>Rufus 优势</h2><p>截止到文章发布为止，Rufus 导入 iso 镜像是没有任何要求的。而有的 PE 工具，如「老毛桃」、「U盘大师」或「大白菜」等只能识别完整可引导的 iso 文件，太麻烦了，而 Rufus 可以直接识别，不需要任何操作。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>ubuntu</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>os</tag>
+      
+      <tag>ubuntu</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>TypeScript 学习笔记</title>
     <link href="/2023/09/05/typescript_learning/"/>
     <url>/2023/09/05/typescript_learning/</url>
