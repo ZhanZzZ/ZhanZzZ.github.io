@@ -13,16 +13,14 @@
     
     <categories>
       
-      <category>zustand</category>
+      <category>技术</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>React</tag>
-      
-      <tag>zustand</tag>
+      <tag>前端</tag>
       
     </tags>
     
@@ -40,16 +38,14 @@
     
     <categories>
       
-      <category>EventLoop</category>
+      <category>技术</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>Front-End</tag>
-      
-      <tag>EventLoop</tag>
+      <tag>前端</tag>
       
     </tags>
     
@@ -67,18 +63,14 @@
     
     <categories>
       
-      <category>Vue</category>
+      <category>技术</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>Vue</tag>
-      
-      <tag>Plugins</tag>
-      
-      <tag>Image</tag>
+      <tag>前端</tag>
       
     </tags>
     
@@ -87,7 +79,7 @@
   
   
   <entry>
-    <title>实现自定义注解</title>
+    <title>Java 实现自定义注解</title>
     <link href="/2023/09/07/custom-annotation/"/>
     <url>/2023/09/07/custom-annotation/</url>
     
@@ -96,14 +88,14 @@
     
     <categories>
       
-      <category>Java</category>
+      <category>技术</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>Java</tag>
+      <tag>后端</tag>
       
     </tags>
     
@@ -121,16 +113,16 @@
     
     <categories>
       
-      <category>ubuntu</category>
+      <category>技术</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>os</tag>
+      <tag>后端</tag>
       
-      <tag>ubuntu</tag>
+      <tag>运维</tag>
       
     </tags>
     
@@ -148,14 +140,14 @@
     
     <categories>
       
-      <category>TypeScript</category>
+      <category>技术</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>TypeScript</tag>
+      <tag>前端</tag>
       
     </tags>
     
