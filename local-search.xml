@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>XSS 攻击、SQL注入、CSRF攻击、DDOS攻击、DNS劫持</title>
+    <link href="/2025/12/22/frontend2/"/>
+    <url>/2025/12/22/frontend2/</url>
+    
+    <content type="html"><![CDATA[<h4 id="XSS-攻击"><a href="#XSS-攻击" class="headerlink" title="XSS 攻击"></a>XSS 攻击</h4><ul><li><p>全称为<strong>跨站脚本攻击</strong>(<code>Cross Site Scripting</code>)，为了与<code>CSS</code>样式进行区分缩写为<code>XSS</code>。</p></li><li><p><code>XSS</code>攻击者通过篡改网页，注入恶意<code>js</code>脚本，使用户浏览网页时，控制用户浏览器进行恶意操作的一种攻击方式。</p></li><li><p><code>XSS</code>攻击经常出现在论坛或博客应用中。攻击者可以偷取用户的<code>Cookie</code>、密码等重要数据进而伪造交易、盗取用户财产、窃取情报等私密信息。</p></li><li><pre><code class="js">&lt;script&gt;alert(&#39;xxx&#39;)&lt;/script&gt;</code></pre></li><li><p>如上所示，若用户在文本输入框中输入的并非正常文本，而是一段<code>js</code>代码，而后端又没对用户的数据进行处理直接存入数据库，那么当其他用户过来访问该页面时，浏览器必然会执行这段脚本，所以杜绝<code>XSS</code>攻击在网络安全中非常重要。</p></li><li><p>即后端永远不能相信用户提交的数据，在接受数据的时候一定要做<strong>消毒处理</strong>。</p></li><li><p>一般是过滤一些特殊字符，如<code>js</code>中的<code>&lt;&gt;</code>需要进行转移<code>&lt;&gt;</code>再进行存储，这样可以有效预防<code>XSS</code>攻击</p></li><li><p>另外<code>Cookie</code>中若设置了<code>HrrpOnly</code>属性，那么通过<code>js</code>脚本也无法读取到<code>Cookie</code>信息，这样也可以再一定程度上防止<code>XSS</code>攻击窃取<code>cookie</code>需不需</p></li></ul><h4 id="SQL-注入"><a href="#SQL-注入" class="headerlink" title="SQL 注入"></a>SQL 注入</h4><ul><li><code>SQL注入</code> 攻击指的是攻击者在 <code>HTTP</code> 请求中注入恶意 <code>SQL</code> 命令，服务器用请求参数构造数据库 <code>SQL</code> 命令时，恶意 <code>SQL</code> 被一起构造，并在数据库中执行，以便得到数据库中的感兴趣的数据或对数据库进行读取、修改、删除、插入等敏感的操作，从而导致数据被随意篡改</li><li>但是 <code>SQL注入</code> 攻击，需要攻击者对数据库表有所了解才行，比如你的项目 <code>开源</code> 了，不小心公开了数据库的账号和密码；另外你的网站上线没有 <code>关闭调试模式</code>，有心者可以根据网站的错误回显，可以猜测表结构；另外还有就是 <code>盲注</code>，也即是很多有心者会盲猜数据表结构，但是这种难度最大</li><li><code>SQL注入</code> 可以通过预编译手段进行预防，绑定参数是最好的防 <code>SQL</code> 注入方法。现在流行的框架基本都实现了 <code>SQL预编译</code>和 <code>参数绑定</code>，恶意攻击的 <code>SQL</code> 会被当做 <code>SQL</code> 的参数，而不是 <code>SQL</code> 命令被执行</li></ul><h4 id="CSRF攻击"><a href="#CSRF攻击" class="headerlink" title="CSRF攻击"></a>CSRF攻击</h4><ul><li><code>CSRF</code> 全称 <code>Cross Site Request Forgery，跨站点请求伪造</code>，攻击者通过跨站请求，以合法的用户身份进行非法操作，如转账交易、发表评论等。其核心是利用了浏览器 <code>Cookie</code> 或服务器的 <code>Session</code> 策略，盗取用户的身份信息</li><li>在打开 <code>A网站</code> 的情况下，另开 <code>Tab页面</code> 打开恶意 <code>网站B</code>，此时在 <code>B页面</code> 的 <code>恶意意图</code> 下，浏览器发起一个对 <code>网站A</code> 的 <code>HTTP</code> 请求</li><li>因为之前 <code>A网站</code> 已经打开了，浏览器存有 <code>A网站</code> 中的 <code>Cookie</code> 或其他用于身份认证的信息，这一次被 <code>恶意意图</code> 的请求，将会自动带上这些信息，这将会导致身份劫持，造成并非本人意愿的操作结果</li><li>而对应 <code>CSRF攻击</code> 的防御策略有：<code>表单token</code>、 <code>验证码</code>、<code>Referer 检测</code> 等</li></ul><h4 id="DDOS攻击"><a href="#DDOS攻击" class="headerlink" title="DDOS攻击"></a>DDOS攻击</h4><ul><li><code>DDOS</code> 全称 <code>Distributed Denial of Service，分布式拒绝服务攻击</code>。是拒绝服务攻击的升级版。拒绝攻击服务其实就是让你的服务不能正常给用户提供服务，也就是俗话说的服务宕机。常用于攻击对外提供服务的服务器，像常见的：<code>Web服务</code>、<code>邮件服务</code>、<code>DNS服务</code>、<code>即时通讯服务</code> 等</li><li>在早期发起 <code>DoS攻击</code> 是一件很容易的事情，只需要写个程序让服务过载，无暇提供正常服务即可，也就是一秒中请求服务多次，将目标服务器的内存跑崩</li><li>后来随着技术对发展，现在的服务器都是分布式，并不是单一服务器提供服务，一个服务背后拥有着是数不清的 <code>CDN节点</code>，也是就拥有着数不清的<code>Web服务器</code>。想靠单台服务器去攻击这种分布式网络，无异于对方<code>以卵击石</code> ，而且现在很多 <code>DDOS 攻击</code> 都不是免费的，所以很容易造成偷鸡不成蚀把米</li><li>防御手段：随着技术发展到今天也并不能完全杜绝这种攻击的出现，只能通过技术去缓解。其中包括：<code>流量清洗</code>、<code>SYN Cookie</code> 等等</li></ul><h4 id="DNS劫持"><a href="#DNS劫持" class="headerlink" title="DNS劫持"></a>DNS劫持</h4><ul><li>当今互联网流量中，以 <code>HTTP／HTTPS</code> 为主的 <code>Web服务</code> 产生的流量占据了绝大部分</li><li><code>Web服务</code> 发展的如火如荼，这背后离不开一个默默无闻的大功臣就是<a href="https://cloud.tencent.com/product/dns?from_column=20065&from=20065">域名解析</a>系统，<code>DNS</code> 提供将域名转换成 <code>ip地址</code> 的服务，每一个域名的解析都要经过 <code>DNS</code> ，所以可以看出它的重要性</li><li>正是因为它的重要性，所以 <code>DNS劫持</code> 很容易被别有用心的人利用</li><li>早期并没有考虑太多的安全性，所以导致 <code>DNS</code> 很容易被劫持</li><li>如果攻击者篡改 <code>DNS解析</code> 设置，将域名由正常 <code>IP</code> 指向由攻击者控制的非法 <code>IP</code>，就会导致我们访问域名打开的却不是对应的网站，而是一个假冒或者别有用心的网站。这种攻击手段就是 <code>DNS劫持</code></li><li>通过 <code>DNS劫持</code> 简单点可以导致用户流失，严重的后果甚至惠将用户诱导至攻击者控制额非法网站，可能会造成银行卡号、手机号码、账号密码等重要信息的泄露</li><li>后来出现了 <code>DNSSEC</code> 技术，虽然在一定程度上解决了劫持问题，但是国内并没有太多应用的案例，因此后来阿里、腾讯推出了 <code>httpDNS</code> 服务也一定程度上可以抑制这种攻击手段</li><li>另外可以 <code>安装SSL证书</code>。SSL证书具备服务器身份认证功能，可以使DNS 劫持导致的连接错误情况及时被发现和终止</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>前端</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>做事要放宽思路</title>
     <link href="/2025/12/21/stablize2/"/>
     <url>/2025/12/21/stablize2/</url>
