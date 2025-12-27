@@ -4,6 +4,56 @@
   
   
   <entry>
+    <title>注意用力过猛</title>
+    <link href="/2025/12/27/stablize6/"/>
+    <url>/2025/12/27/stablize6/</url>
+    
+    <content type="html"><![CDATA[<h3 id="要注意用力过猛"><a href="#要注意用力过猛" class="headerlink" title="要注意用力过猛"></a>要注意用力过猛</h3><p>今天感受到做事不能用力过猛，得有个度。</p><p>比如今天练腿，早上6点半不到就醒了然后一直没睡着。</p><p>说实话上午并没有感觉到有多累，但是一开始锻炼就不一样了。哪怕只是蹲80kg，那感觉也不是很顺畅，当然也有可能是因为最近练腿练得比较少的原因，但今天身故没有恢复好也确实是问题之一。其实也有想过要不要多做两个动作坚持坚持，但我怕等下次训练会更难受，还是算了。</p><p>与其一次做的很多，不如把时间拉长，慢慢来会更好。</p><p>不过明天休息日，倒是可以多做做有氧。</p><h3 id="关于禁欲"><a href="#关于禁欲" class="headerlink" title="关于禁欲"></a>关于禁欲</h3><p>今天打破了禁欲快一周的记录，本来还以为能有一周呢，这次没坚持下来。</p><p>感觉自己来一发真是浪费时间，找资源又麻烦，起飞结束之后精神头又差，难顶。</p><p>还是得注意注意。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>心态</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>生活</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>重构1</title>
+    <link href="/2025/12/27/refactor1/"/>
+    <url>/2025/12/27/refactor1/</url>
+    
+    <content type="html"><![CDATA[<h3 id="每日任务完成情况"><a href="#每日任务完成情况" class="headerlink" title="每日任务完成情况"></a>每日任务完成情况</h3><ul><li><input checked="" disabled="" type="checkbox"> 运动</li><li><input checked="" disabled="" type="checkbox"> 英语</li><li><input checked="" disabled="" type="checkbox"> 技术</li><li><input checked="" disabled="" type="checkbox"> 反思</li></ul><h3 id="运动"><a href="#运动" class="headerlink" title="运动"></a>运动</h3><table><thead><tr><th>动作</th><th>重量</th><th>次数 * 组数</th></tr></thead><tbody><tr><td>深蹲</td><td>80kg</td><td>5 * 5</td></tr><tr><td>杠铃罗马尼亚硬拉</td><td>80kg</td><td>5 * 8</td></tr><tr><td>腿弯举</td><td>65kg</td><td>5 * 8</td></tr></tbody></table><h3 id="英语"><a href="#英语" class="headerlink" title="英语"></a>英语</h3><ol><li>When Arthur pulls the magic sword, Merlin says that he is the king.</li><li>I don’t think this is right, because a king is a real person, but the story makes me feel that the king is like a symbol. That doesn’t feel true to me.</li><li>Yes, you’re right.  And Merlin told Arthur not to break the magic sword, because without the magic sword, Arthur is nothing.</li><li>In the story, there is a man called Lancelot. He is the strongest knight in the country. He falls in love with the queen, and that makes me uncomfortable.</li></ol><h3 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h3><p>根据当前个人情况分析职业规划。</p><h3 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h3><p><a href="./stablize6.md">这里</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>重构</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>重构</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>为什么 Vue 中的 data 必须是一个函数而不是对象</title>
     <link href="/2025/12/24/frontend5/"/>
     <url>/2025/12/24/frontend5/</url>

@@ -16,24 +16,24 @@
   <meta name="author" content="_詹某_">
   <meta name="keywords" content="">
   
-    <meta name="description" content="如果 Vue 中的 data 是一个对象会有什么问题？">
+    <meta name="description" content="用力过猛和纵欲没有区别">
 <meta property="og:type" content="article">
-<meta property="og:title" content="为什么 Vue 中的 data 必须是一个函数而不是对象">
-<meta property="og:url" content="https://zhanzzz.gihub.io/2025/12/24/frontend5/index.html">
+<meta property="og:title" content="注意用力过猛">
+<meta property="og:url" content="https://zhanzzz.gihub.io/2025/12/27/stablize6/index.html">
 <meta property="og:site_name" content="_詹某_的个人博客">
-<meta property="og:description" content="如果 Vue 中的 data 是一个对象会有什么问题？">
+<meta property="og:description" content="用力过猛和纵欲没有区别">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://zhanzzz.gihub.io/img/code.png">
-<meta property="article:published_time" content="2025-12-24T12:15:05.000Z">
-<meta property="article:modified_time" content="2025-12-24T12:17:19.378Z">
+<meta property="og:image" content="https://zhanzzz.gihub.io/img/life.jpg">
+<meta property="article:published_time" content="2025-12-27T11:08:46.000Z">
+<meta property="article:modified_time" content="2025-12-27T11:21:28.440Z">
 <meta property="article:author" content="_詹某_">
-<meta property="article:tag" content="前端">
+<meta property="article:tag" content="生活">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://zhanzzz.gihub.io/img/code.png">
+<meta name="twitter:image" content="https://zhanzzz.gihub.io/img/life.jpg">
   
   
   
-  <title>为什么 Vue 中的 data 必须是一个函数而不是对象 - _詹某_的个人博客</title>
+  <title>注意用力过猛 - _詹某_的个人博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -222,13 +222,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/code.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/life.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="为什么 Vue 中的 data 必须是一个函数而不是对象"></span>
+            <span id="subtitle" data-typed-text="注意用力过猛"></span>
           
         </div>
 
@@ -239,8 +239,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-12-24 20:15" pubdate>
-          2025年12月24日 晚上
+        <time datetime="2025-12-27 19:08" pubdate>
+          2025年12月27日 晚上
         </time>
       </span>
     
@@ -251,7 +251,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          301 字
         
       </span>
     
@@ -262,7 +262,7 @@
         
         
         
-          10 分钟
+          3 分钟
         
       </span>
     
@@ -307,58 +307,19 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">为什么 Vue 中的 data 必须是一个函数而不是对象</h1>
+            <h1 id="seo-header">注意用力过猛</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="核心原因：组件复用与数据隔离"><a href="#核心原因：组件复用与数据隔离" class="headerlink" title="核心原因：组件复用与数据隔离"></a>核心原因：组件复用与数据隔离</h3><h4 id="对象引用的问题"><a href="#对象引用的问题" class="headerlink" title="对象引用的问题"></a>对象引用的问题</h4><p>在<code>javaScript</code>中，对象是引用类型，若<code>data</code>是一个对象：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// ❌ 错误示例</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  <span class="hljs-attr">data</span>: &#123;<br>    <span class="hljs-attr">count</span>: <span class="hljs-number">0</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>当这个组件被多次使用时，所有组件实例都会<strong>共享同一个data对象</strong>。这意味着：</p>
-<ul>
-<li>改变一个组件实例的数据</li>
-<li>会影响到所有其他使用该组件的实例</li>
-<li>造成数据污染和不可预期的行为</li>
-</ul>
-<h4 id="函数返回新对象"><a href="#函数返回新对象" class="headerlink" title="函数返回新对象"></a>函数返回新对象</h4><p>使用函数返回对象</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// ✅ 正确示例</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> &#123;<br>      <span class="hljs-attr">count</span>: <span class="hljs-number">0</span><br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>每次创建组件实例时：</p>
-<ul>
-<li>函数会被调用</li>
-<li>返回一个<strong>全新的数据对象</strong></li>
-<li>每个组件实例拥有<strong>独立的数据副本</strong></li>
-<li>实例之间互不影响</li>
-</ul>
-<h4 id="实际案例对比"><a href="#实际案例对比" class="headerlink" title="实际案例对比"></a>实际案例对比</h4><p>假设有一个计数器组件:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;!-- Counter.vue --&gt;<br>&lt;template&gt;<br>  &lt;button @click=&quot;count++&quot;&gt;点击次数: &#123;&#123; count &#125;&#125;&lt;/button&gt;<br>&lt;/template&gt;<br><br>&lt;script&gt;<br>export default &#123;<br>  // 如果data是对象（错误）<br>  data: &#123;<br>    count: 0<br>  &#125;<br>&#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
-
-<p>在页面中使用3次：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;Counter /&gt;<br>&lt;Counter /&gt;<br>&lt;Counter /&gt;<br></code></pre></td></tr></table></figure>
-
-<p>问题： 点击任何一个按钮,所有按钮的数字都会增加。因为它们共享同一个count变量。</p>
-<p>正确方式：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">return</span> &#123;<br>    <span class="hljs-attr">count</span>: <span class="hljs-number">0</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>现在每个按钮都有自己独立的count,互不干扰。</p>
-<h4 id="特殊情况：根实例"><a href="#特殊情况：根实例" class="headerlink" title="特殊情况：根实例"></a>特殊情况：根实例</h4><p>值得注意的是,Vue根实例（new Vue）的data可以是对象：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">new</span> <span class="hljs-title class_">Vue</span>(&#123;<br>  <span class="hljs-attr">el</span>: <span class="hljs-string">&#x27;#app&#x27;</span>,<br>  <span class="hljs-attr">data</span>: &#123;  <span class="hljs-comment">// 根实例可以是对象</span><br>    <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;Hello&#x27;</span><br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
-
-<p>原因： 根实例只会被创建一次,不存在复用问题,所以不需要函数包装。</p>
-<h4 id="内存角度"><a href="#内存角度" class="headerlink" title="内存角度"></a>内存角度</h4><p>使用函数还有一个好处：</p>
-<ul>
-<li>函数返回的对象在组件销毁后可以被垃圾回收</li>
-<li>保证了更好的内存管理</li>
-<li>避免内存泄漏</li>
-</ul>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>Vue要求组件的data是函数的本质原因是：</p>
-<ol>
-<li><strong>保证数据隔离</strong> - 每个组件实例有独立的数据副本</li>
-<li><strong>防止数据污染</strong> - 避免多个实例共享同一个对象引用</li>
-<li><strong>支持组件复用</strong> - 同一组件可以在不同地方使用而不互相影响</li>
-<li><strong>符合组件化思想</strong> - 组件应该是独立、可复用的单元</li>
-</ol>
+                <h3 id="要注意用力过猛"><a href="#要注意用力过猛" class="headerlink" title="要注意用力过猛"></a>要注意用力过猛</h3><p>今天感受到做事不能用力过猛，得有个度。</p>
+<p>比如今天练腿，早上6点半不到就醒了然后一直没睡着。</p>
+<p>说实话上午并没有感觉到有多累，但是一开始锻炼就不一样了。哪怕只是蹲80kg，那感觉也不是很顺畅，当然也有可能是因为最近练腿练得比较少的原因，但今天身故没有恢复好也确实是问题之一。其实也有想过要不要多做两个动作坚持坚持，但我怕等下次训练会更难受，还是算了。</p>
+<p>与其一次做的很多，不如把时间拉长，慢慢来会更好。</p>
+<p>不过明天休息日，倒是可以多做做有氧。</p>
+<h3 id="关于禁欲"><a href="#关于禁欲" class="headerlink" title="关于禁欲"></a>关于禁欲</h3><p>今天打破了禁欲快一周的记录，本来还以为能有一周呢，这次没坚持下来。</p>
+<p>感觉自己来一发真是浪费时间，找资源又麻烦，起飞结束之后精神头又差，难顶。</p>
+<p>还是得注意注意。</p>
 
                 
               </div>
@@ -377,7 +338,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%8A%80%E6%9C%AF/" class="category-chain-item">技术</a>
+  <a href="/categories/%E5%BF%83%E6%80%81/" class="category-chain-item">心态</a>
   
   
 
@@ -392,7 +353,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%89%8D%E7%AB%AF/" class="print-no-link">#前端</a>
+        <a href="/tags/%E7%94%9F%E6%B4%BB/" class="print-no-link">#生活</a>
       
     </div>
   
@@ -404,8 +365,8 @@
 
   <div class="license-box my-3">
     <!-- <div class="license-title">
-      <div>为什么 Vue 中的 data 必须是一个函数而不是对象</div>
-      <div>https://zhanzzz.gihub.io/2025/12/24/frontend5/</div>
+      <div>注意用力过猛</div>
+      <div>https://zhanzzz.gihub.io/2025/12/27/stablize6/</div>
     </div> -->
     <div class="license-meta">
       
@@ -417,7 +378,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年12月24日</div>
+          <div>2025年12月27日</div>
         </div>
       
       
@@ -455,18 +416,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/12/27/refactor1/" title="重构1">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">重构1</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/12/24/stablize5/" title="关于领导让我支援这件事">
-                        <span class="hidden-mobile">关于领导让我支援这件事</span>
+                      <a href="/2025/12/27/refactor1/" title="重构1">
+                        <span class="hidden-mobile">重构1</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
